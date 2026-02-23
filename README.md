@@ -1,10 +1,8 @@
-# Deland - DeFi Lending & Borrowing Protocol
-
-![Deland Banner](./assets/banner.png)
+# Cetra - DeFi Lending & Borrowing Protocol
 
 ## 🌟 Overview
 
-Deland is a decentralized finance (DeFi) protocol that enables users to lend and borrow cryptocurrency assets in a trustless, secure, and efficient manner. Built on blockchain technology, Deland empowers users to earn interest on their crypto holdings or access liquidity by borrowing against their collateral.
+Cetra is a decentralized finance (DeFi) protocol that enables users to lend and borrow cryptocurrency assets in a trustless, secure, and efficient manner. Built on blockchain technology, Cetra empowers users to earn interest on their crypto holdings or access liquidity by borrowing against their collateral.
 
 ## ✨ Key Features
 
@@ -22,21 +20,14 @@ Deland is a decentralized finance (DeFi) protocol that enables users to lend and
 - **Smart Contracts**: Solidity
 - **Blockchain**: MIDL & Ethereum/EVM-compatible chains
 - **Web3 Integration**: ethers.js
-- **MIDL**: MIDL SDK & UI Kit
 - **Price Oracles**: Self-deployed price feeds
 
 ## 📦 Project Structure
 
-```
-Deland/
-├── contracts/              # Smart contract source files
-│   ├── LendingAndBorrowing.sol
-│   ├── SimplePriceFeed.sol
-│   └── test/              # Mock tokens for testing
-├── components/            # React components
-│   ├── ui/               # UI components
-│   ├── hooks/            # Custom React hooks
-│   └── providers/        # Context providers
+```text
+Cetra/
+├── contracts/            # Smart contract source files
+├── components/           # React components
 ├── pages/                # Next.js pages
 ├── scripts/              # Deployment and utility scripts
 ├── abis/                 # Contract ABIs
@@ -90,8 +81,8 @@ Deland/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/Deland.git
-   cd Deland
+   git clone https://github.com/yourusername/cetra.git
+   cd cetra
    ```
 
 2. **Install dependencies**
@@ -102,9 +93,8 @@ Deland/
 3. **Set up environment variables**
    Create a `.env.local` file in the root directory:
    ```env
-   NEXT_PUBLIC_CONTRACT_ADDRESS=your_contract_address
-   NEXT_PUBLIC_NETWORK_ID=your_network_id
-   NEXT_PUBLIC_RPC_URL=your_rpc_url
+   NEXT_PUBLIC_LENDING_CONTRACT_ADDRESS=your_contract_address
+   NEXT_PUBLIC_LAR_TOKEN_ADDRESS=your_lar_token_address
    ```
 
 4. **Run the development server**
@@ -117,32 +107,28 @@ Deland/
 
 ## 🔗 MIDL Network Integration
 
-Deland is deployed on **MIDL**, a high-performance blockchain network designed for scalability and efficiency.
+Cetra is deployed on **MIDL Regtestnet**, a high-performance blockchain network designed for scalability and efficiency.
 
 ### What is MIDL?
 
-What is MIDL?
 MIDL is a shared-state Layer 1 blockchain built to eliminate fragmentation across all chains.
 
 MIDL enables you to build Universal Apps that can support transactions from any chain - without requiring users to juggle between multiple wallets.
 
 In short, Deploy once, go cross-chain & 10X your user base.
 
-Deland leverages the **MIDL SDK and UI Kit** 
-
-
 ### Connect to MIDL
 
-To connect your wallet to MIDL network:
+To connect your wallet to the MIDL network:
 
 **Network Details:**
-- **Network Name**: MIDL Testnet
-- **RPC URL**: MIDL Testnet RPC
-- **Chain ID**: 42101
+- **Network Name**: MIDL Regtestnet
+- **RPC URL**: https://rpc.staging.midl.xyz
+- **Chain ID**: 2049
 - **Currency Symbol**: MIDL
-- **Block Explorer**: explorer.midl.network
+- **Block Explorer**: https://explorer.midl.network/
 
-Add these details to your MetaMask or Web3 wallet to interact with Deland on MIDL.
+Add these details to your MetaMask or Web3 wallet to interact with Cetra on MIDL.
 
 
 ## 📊 Supported Assets
@@ -152,8 +138,6 @@ Add these details to your MetaMask or Web3 wallet to interact with Deland on MID
 | Wrapped Ether | WETH | MIDL | 80% |
 | USD Coin | USDC | MIDL | 85% |
 | Tether | USDT | MIDL | 85% |
-
-
 
 
 ## 🤝 Contributing
@@ -170,14 +154,10 @@ We welcome contributions from the community! Please follow these steps:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-
-
 ## ⚠️ Disclaimer
 
 This project is for educational and experimental purposes. Use at your own risk. Always do your own research before interacting with any DeFi protocol. Never invest more than you can afford to lose.
 
-
-
-**Built with ❤️ by the Deland Team**
+**Built with ❤️ by the Cetra Team**
 
 *Empowering financial freedom through decentralized lending*
