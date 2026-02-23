@@ -111,11 +111,12 @@ Cetra is deployed on **MIDL Regtestnet**, a high-performance blockchain network 
 
 ### What is MIDL?
 
-MIDL is a shared-state Layer 1 blockchain built to eliminate fragmentation across all chains.
+Midl introduces a Bitcoin execution environment with the power of Ethereum’s VM that processes smart contracts and enables dApps to function natively. 
 
-MIDL enables you to build Universal Apps that can support transactions from any chain - without requiring users to juggle between multiple wallets.
+Developers get the familiar DevEx.
+Users never leave the network.
 
-In short, Deploy once, go cross-chain & 10X your user base.
+And Bitcoin gets what it always lacked: the engine for the biggest token economy.
 
 ### Connect to MIDL
 
@@ -136,8 +137,11 @@ Add these details to your MetaMask or Web3 wallet to interact with Cetra on MIDL
 | Token | Symbol | Network | Collateral Factor |
 |-------|--------|---------|-------------------|
 | Wrapped Ether | WETH | MIDL | 80% |
-| USD Coin | USDC | MIDL | 85% |
-| Tether | USDT | MIDL | 85% |
+| USD Coin | USDC | MIDL | 80% |
+| CETRA | CET | MIDL | 80% |
+|mBTC | mBTC | MIDL | 80% |
+
+
 
 
 ## 🤝 Contributing
