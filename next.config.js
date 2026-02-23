@@ -5,7 +5,13 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  transpilePackages: ['@midl/bip322-js', '@midl/satoshi-kit', '@midl/executor-react', '@midl/core', '@midl/react'],
+  transpilePackages: [
+    '@midl/bip322-js',
+    '@midl/satoshi-kit',
+    '@midl/executor-react',
+    '@midl/core',
+    '@midl/react'
+  ]
 }
 
 module.exports = nextConfig
