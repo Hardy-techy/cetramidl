@@ -19,7 +19,9 @@ import TableSkeleton from '../components/ui/TableSkeleton';
 import MockTokens from '../abis/MockTokens.json';
 import { trackPromise } from 'react-promise-tracker';
 
-export default function Market() {
+import dynamic from 'next/dynamic';
+
+function MarketComponent() {
     const router = useRouter();
     const { requireInstall, isLoading, connect, contract, web3, isUniversal, chainId, connectedAccount, pushChainContext, sendTransaction: providerSendTransaction } = useWeb3();
     const { account } = useAccount();
@@ -244,8 +246,4 @@ export default function Market() {
         </div>
     );
 }
-
-// Force server-side rendering to prevent build timeout
-export async function getServerSideProps() {
-    return { props: {} };
-}
+export default dynamic(() => Promise.resolve(MarketComponent), { ssr: false });

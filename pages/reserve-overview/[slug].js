@@ -16,12 +16,31 @@ import { useRouter } from "next/router";
 import { todp } from "../../utils/todp";
 import { convertToDollar } from "../../utils/helpfulScripts";
 
-export default function Details({ token }) {
+import dynamic from 'next/dynamic';
+
+function DetailsComponent() {
+  const router = useRouter();
+  const query = router.query;
 
   const { web3, contract } = useWeb3();
   const { account } = useAccount();
   const { yourSupplies } = useYourSupplies()
   const { yourBorrows } = useYourBorrows()
+
+  if (!query || Object.keys(query).length === 0) {
+    return <div className="min-h-screen bg-gray-100 flex items-center justify-center">Loading...</div>;
+  }
+
+  let token = { ...query };
+  try {
+    if (query.image) token.image = JSON.parse(query.image);
+    if (query.availableAmountInContract) token.availableAmountInContract = JSON.parse(query.availableAmountInContract);
+    if (query.totalBorrowedInContract) token.totalBorrowedInContract = JSON.parse(query.totalBorrowedInContract);
+    if (query.totalSuppliedInContract) token.totalSuppliedInContract = JSON.parse(query.totalSuppliedInContract);
+    if (query.userTokenBorrowedAmount) token.userTokenBorrowedAmount = JSON.parse(query.userTokenBorrowedAmount);
+    if (query.userTokenLentAmount) token.userTokenLentAmount = JSON.parse(query.userTokenLentAmount);
+    if (query.walletBalance) token.walletBalance = JSON.parse(query.walletBalance);
+  } catch (e) { console.error("Query parse error", e); }
 
   let actualAvailable;
   let actualAvailableInDollars;
@@ -186,35 +205,4 @@ export default function Details({ token }) {
   );
 }
 
-
-export async function getServerSideProps(context) {
-
-  const query = context.query;
-
-  const image = JSON.parse(query.image);
-
-  const availableAmountInContract = JSON.parse(query.availableAmountInContract);
-  const totalBorrowedInContract = JSON.parse(query.totalBorrowedInContract);
-  const totalSuppliedInContract = JSON.parse(query.totalSuppliedInContract);
-  const userTokenBorrowedAmount = JSON.parse(query.userTokenBorrowedAmount);
-  const userTokenLentAmount = JSON.parse(query.userTokenLentAmount);
-  const walletBalance = JSON.parse(query.walletBalance);
-
-  const token = {
-    ...query,
-    image,
-    availableAmountInContract,
-    totalBorrowedInContract,
-    totalSuppliedInContract,
-    userTokenBorrowedAmount,
-    userTokenLentAmount,
-    walletBalance,
-  };
-
-
-  return {
-    props: {
-      token
-    },
-  };
-}
+export default dynamic(() => Promise.resolve(DetailsComponent), { ssr: false });
