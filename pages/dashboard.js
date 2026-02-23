@@ -95,7 +95,10 @@ export default function Markets() {
   // Create a dedicated Read-Only Web3 instance that ALWAYS uses our reliable proxy
   // This bypasses the user's wallet (MetaMask/Push) which might be rate-limited
   const proxyWeb3 = useMemo(() => {
-    return new Web3(new Web3.providers.HttpProvider('/api/rpc'));
+    if (typeof window !== 'undefined') {
+      return new Web3(new Web3.providers.HttpProvider('/api/rpc'));
+    }
+    return null;
   }, []);
 
   // Function to refresh all data - Properly trigger SWR revalidation
