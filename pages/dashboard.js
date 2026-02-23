@@ -647,7 +647,7 @@ export default function Markets() {
           </div>
 
           <a
-            href="https://faucet.cetra.app/"
+            href="https://midlfaucet.cetra.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm font-semibold bg-[#1C1C1E] hover:bg-[#2C2C2E] border border-[#2C2C2E] px-4 py-2.5 rounded-xl"
